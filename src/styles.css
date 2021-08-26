@@ -1,3 +1,5 @@
+/* This really sucks. */
+
 /* ================================ */
 /* Reset ========================= */
 /* ============================== */
@@ -121,8 +123,24 @@ main.col-12 {
   background-color: white;
   position: relative;
 }
-#content .col-4:first-child {
+#content .row .col-4 {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+#content .row:first-child .col-4 {
   background-image: url("/dist/img/1__helloworld__markus-spiske-8OyKWQgBsKQ-unsplash_opt.jpg");
+  z-index: 1;
+}
+#content .row:nth-child(2) .col-4 {
+  background-image: url("/dist/img/2__why__thisisengineering-raeng-8hgmG03spF4-unsplash_opt.jpg");
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+#content .row:last-child .col-4 {
+  background-image: url("/dist/img/3__about__thisisengineering-raeng-LxVzgYjkHp4-unsplash_opt.jpg");
+  background-position: center;
   position: relative;
   z-index: 1;
 }

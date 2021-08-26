@@ -1,7 +1,7 @@
 {
   "name": "final-exercise",
   "version": "1.0.0",
-  "description": "",
+  "description": "this one is now working on github. Hopefully …",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",

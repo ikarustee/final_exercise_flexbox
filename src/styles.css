@@ -6,6 +6,10 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --blue: #009cdf;
+  --white: #ffffff;
+}
 html {
   font-size: 16px;
 }
@@ -107,6 +111,36 @@ main.col-12 {
   gap: 1em;
   flex-wrap: wrap;
 }
+#content .col-4 {
+  border: 4px var(--blue) solid;
+  box-shadow: 0 0 0 4px var(--white) inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  position: relative;
+}
+#content .col-4:first-child {
+  background-image: url("/dist/img/1__helloworld__markus-spiske-8OyKWQgBsKQ-unsplash_opt.jpg");
+  position: relative;
+  z-index: 1;
+}
+#content .col-4:first-child::before {
+  content: "";
+  display: inline-block;
+  background-color: var(--blue);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.5;
+  z-index: 0;
+  border: 10px red solid;
+  box-sizing: border-box;
+}
+#content .col-4 h2 {
+  position: relative;
+}
 aside.col-2 {
   padding: 0;
 }
@@ -115,4 +149,10 @@ nav#secondary {
 }
 footer {
   text-align: center;
+}
+/* ================================ */
+/* Typography ==================== */
+/* ============================== */
+.col-4 h2 {
+  color: var(--white);
 }

@@ -412,7 +412,7 @@ aside ul.menu {
 aside .menu li {
   align-self: center;
   padding: 0.5em 1em;
-  width: 22vw;
+  width: 32vw;
 }
 @media screen and (min-width: 1024px) {
   aside.col-2 {

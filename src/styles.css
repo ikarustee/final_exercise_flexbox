@@ -216,6 +216,26 @@ ul#primary li {
   flex-basis: 100%;
   padding: 1em;
 }
+ul#primary li:hover a {
+  color: var(--black);
+}
+ul#primary li a::after {
+  content: "";
+  display: block;
+  position: relative;
+  max-width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: calc(85% / 2);
+  background-color: var(--blue);
+  transition: max-width 500ms ease-in;
+}
+ul#primary li:hover a::after {
+  display: block;
+  max-width: 15%;
+  height: 2px;
+  transition: max-width 250ms ease-in;
+}
 nav#secondary {
   clear: both;
   text-align: left;
@@ -262,6 +282,10 @@ nav#secondary {
     padding: 0.5em 1em;
     flex-basis: 10%;
   }
+  ul#primary li:hover a::after {
+    max-width: 100%;
+    left: 0;
+  }
 }
 /* ================================ */
 /* Main containers =============== */
@@ -293,6 +317,10 @@ header {
   flex-wrap: wrap;
   margin-bottom: 2.5em;
   padding: 0.5em 0;
+}
+article {
+  display: flex;
+  flex-wrap: wrap;
 }
 article.row .col-4 {
   background-color: var(--blue);
@@ -331,10 +359,6 @@ article.row .col-4 h3 {
 article.row .col-8 {
   padding: 0;
 }
-article {
-  display: flex;
-  flex-wrap: wrap;
-}
 article.row .col-4 {
   display: flex;
   align-items: center;
@@ -343,6 +367,23 @@ article.row .col-4 {
 }
 article.row > .col-8 {
   order: 2;
+}
+article a {
+  display: inline-block;
+  position: relative;
+}
+article a::after {
+  background-color: var(--blue);
+  content: "";
+  display: block;
+  position: relative;
+  max-width: 0;
+  height: 2px;
+  top: 0.5em;
+  transition: max-width 500ms ease-in;
+}
+article a:hover::after {
+  max-width: 100px;
 }
 /* ================================ */
 /* Sidebar ======================= */

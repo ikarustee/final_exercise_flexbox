@@ -2,7 +2,6 @@
 /* Reset ========================= */
 /* ============================== */
 * {
-  /* background-color: rgba(255, 0, 50, 0.2); */
   margin: 0;
   padding: 0;
 }
@@ -37,13 +36,13 @@ h1 {
   font-size: 4.25em;
 }
 h2 {
-  font-size: 2.15em;
+  font-size: 2.25em;
   font-weight: 300;
   line-height: 1;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.25em;
 }
 h3 {
-  font-size: 1.95em;
+  font-size: 1.75em;
 }
 p {
   line-height: 1.5;
@@ -141,27 +140,30 @@ nav.nav.col-10 {
   display: none;
 }
 .nav-btn ~ .menu {
-  opacity: 0;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: calc(100% + 30px);
   height: 0;
   text-align: center;
-  padding: 4em 1em 2em;
+  padding: 4em 1em;
   position: absolute;
-  left: 0;
-  top: 0em;
+  top: 0;
+  left: -15px;
   box-sizing: border-box;
-  transition: height 500ms ease-in-out;
-}
-.menu li {
-  padding: 1em;
+  transition: all 250ms ease-out;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
 }
 .nav-btn:checked ~ .menu {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
+  height: calc(100vh + 10px);
   opacity: 1;
-  height: 100vh;
-  visibility: visible;
   z-index: 1;
   transition: height 500ms ease-out;
+  visibility: visible;
 }
 .nav-btn:checked ~ .nav-icon .navicon {
   background: transparent;
@@ -207,12 +209,14 @@ nav.nav.col-10 {
 .nav-icon .navicon:before {
   top: 8px;
 }
-
 .nav-icon .navicon:after {
   top: -8px;
 }
+ul#primary li {
+  flex-basis: 100%;
+  padding: 1em;
+}
 nav#secondary {
-  background-color: var(--lightblue);
   clear: both;
   text-align: left;
 }
@@ -245,7 +249,7 @@ nav#secondary {
     width: 100%;
   }
   nav ul#primary.menu {
-    height: 100px;
+    height: 80px;
     background-color: transparent;
     display: flex;
     padding: 0;
@@ -276,7 +280,8 @@ nav {
   width: 100%;
 }
 header {
-  padding: 1em 0 4em;
+  padding: 1em 0 2em;
+  margin-bottom: 1em;
 }
 .row > .col-4,
 .row > .col-8 {
@@ -287,7 +292,7 @@ header {
   gap: 4em;
   flex-wrap: wrap;
   margin-bottom: 2.5em;
-  padding: 2em 0;
+  padding: 0.5em 0;
 }
 article.row .col-4 {
   background-color: var(--blue);
@@ -333,18 +338,63 @@ article {
 article.row .col-4 {
   display: flex;
   align-items: center;
-  height: 20vh;
+  height: 25vh;
   order: 1;
 }
 article.row > .col-8 {
   order: 2;
 }
+/* ================================ */
+/* Sidebar ======================= */
+/* ============================== */
 aside.col-2 {
+  width: 100%;
   padding: 0;
+  position: relative;
+  left: 0;
+}
+aside nav {
+  overflow: scroll;
+  /*   overflow-y: hidden; */
+  box-sizing: border-box;
+  scroll-snap-type: x proximity;
+  padding: 1em 0;
+}
+aside ul.menu {
+  background-color: var(--lightblue);
+  list-style: none;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-column-gap: 0;
+  height: 4em;
 }
 aside .menu li {
-  padding: 0.35em 1em;
+  align-self: center;
+  padding: 0.5em 1em;
+  width: 22vw;
 }
+@media screen and (min-width: 1024px) {
+  aside.col-2 {
+    width: 16.6666%;
+  }
+  aside nav {
+    padding-top: 0;
+  }
+  aside nav ul {
+    display: block;
+    padding: 0.75em 0;
+  }
+  aside ul.menu {
+    display: block;
+    height: auto;
+  }
+  aside .menu li {
+    width: auto;
+  }
+}
+/* ================================ */
+/* Footer ======================== */
+/* ============================== */
 footer.col-12 {
   background-color: var(--blue);
   padding: 1.5em 0 2em;
@@ -352,12 +402,16 @@ footer.col-12 {
 }
 footer .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   column-gap: 1em;
+  justify-content: flex-start;
 }
 footer .row .col-md-2 {
-  flex: 1 1 50%;
+  flex: 0 0 calc(50% - 15px);
   padding: 8px 0;
+}
+footer .row .col-md-2:last-of-type {
+  align-self: flex-end;
 }
 footer a {
   color: var(--white);
@@ -366,6 +420,10 @@ footer a {
   header {
     height: 80px;
     padding: 1.5em 0 3em;
+    margin-bottom: 0;
+  }
+  .logo {
+    width: 16.6666%;
   }
   main,
   main.col-12 {
@@ -379,7 +437,7 @@ footer a {
     background-size: 160%;
   }
   article.row .col-4 {
-    height: 30vh;
+    height: 250px;
   }
   article.row > .col-8 {
     order: 1;

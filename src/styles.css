@@ -410,9 +410,9 @@ aside ul.menu {
   height: 4em;
 }
 aside .menu li {
-  align-self: center;
+  align-self: start;
   padding: 0.5em 1em;
-  width: 32vw;
+  width: 50vw;
 }
 @media screen and (min-width: 1024px) {
   aside.col-2 {
@@ -420,6 +420,9 @@ aside .menu li {
   }
   aside nav {
     padding-top: 0;
+  }
+  nav#secondary {
+    overflow: hidden;
   }
   aside nav ul {
     display: block;

@@ -313,7 +313,7 @@ header {
 }
 #content {
   display: flex;
-  gap: 80px;
+  gap: 60px;
   flex-wrap: wrap;
   margin-bottom: 2.5em;
   padding: 0.5em 0;

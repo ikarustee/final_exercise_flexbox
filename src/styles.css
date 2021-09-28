@@ -313,7 +313,7 @@ header {
 }
 #content {
   display: flex;
-  gap: 4em;
+  gap: 80px;
   flex-wrap: wrap;
   margin-bottom: 2.5em;
   padding: 0.5em 0;
@@ -396,7 +396,7 @@ aside.col-2 {
 }
 aside nav {
   overflow: scroll;
-  /*   overflow-y: hidden; */
+  overflow-y: hidden;
   box-sizing: border-box;
   scroll-snap-type: x proximity;
   padding: 1em 0;
@@ -407,12 +407,15 @@ aside ul.menu {
   display: inline-grid;
   grid-auto-flow: column;
   grid-column-gap: 0;
-  height: 4em;
+  height: 5em;
 }
 aside .menu li {
   align-self: start;
   padding: 0.5em 1em;
   width: 50vw;
+}
+aside .menu a {
+  hyphens: auto;
 }
 @media screen and (min-width: 1024px) {
   aside.col-2 {
